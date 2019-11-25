@@ -11,7 +11,7 @@ pipeline {
  		sh 'git clone https://github.com/DilanUA/on-prem-ei-artifact-repo.git' 
  		sh 'sleep 10s'
 		sh 'wget http://192.168.114.11:8080/jnlpJars/jenkins-cli.jar'
-                sh 'java -jar jenkins-cli.jar -s http://192.168.114.46:8080/ -auth admin:admin install-plugin configuration-as-code-plugin'
+                sh 'java -jar jenkins-cli.jar -s http://192.168.114.11:8080/ -auth admin:admin install-plugin configuration-as-code'
    		sh 'cp -R on-prem-ei-artifact-repo/ on-prem-ei-ansible-repo/'
   		sh 'mv on-prem-ei-ansible-repo/on-prem-ei-artifact-repo/ on-prem-ei-ansible-repo/files/'
  		sh 'mkdir -p on-prem-ei-ansible-repo/files/packs'
